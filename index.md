@@ -1,21 +1,11 @@
 # ポートフォリオ
 
-こんにちは！BlenderやUnityを使って、インタラクティブな作品を作っています。
-
-## 🎨 Blender ツール紹介
-
-### キラキラエフェクト生成ツール
-
-図形（星・四角など）を選ぶと、オブジェクトがその形ではじける演出を簡単に作れます。
-
-![Blenderツールの画面](blender1.png)
-
-使い方動画：https://youtu.be/XXXXXX（任意）
-
+TID　大学３年生
+## 🔗 各作品ページ
+## 🎨 Blender作品
+[blender　作品](blender.md)
+[blender　ツール開発](blendertool.md)
 ---
 
-## 🎮 Unity作品：脳トレゲーム
-
-高齢者向けの認知機能向上ゲーム。UR団地でのリサーチを元に開発しました。
-
-![Unityのプレイ画面](unity1.png)
+## 🎮 Unity作品
+[unity　認知機能向上ゲーム開発](unity1.md)
