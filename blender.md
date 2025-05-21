@@ -4,7 +4,7 @@
 ## ✨ ツールの概要
 図形を選ぶとその形に応じてオブジェクトがはじける、エフェクトツール。
 #### 🎥 参考動画
-[YouTubeリンク](https://youtu.be/xxxxxxx)
+[YouTubeリンク]([https://youtu.be/xxxxxxx](https://www.youtube.com/watch?v=0q2EPnLsp7Q))
 こんなことを、簡単に作りたい！！
 
 
