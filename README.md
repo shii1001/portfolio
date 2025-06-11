@@ -8,9 +8,9 @@
 
 ---
 
-## 🔧 ツール機能紹介
+## 🪄 ツール機能紹介
 
-### 🎯 Ring FX Generator
+### 🔮 Ring FX Generator
 円状に画像エフェクトを並べて放出するツールです。  
 UIから「画像・サイズ・個数・配置パターン」を設定でき、アイドルステージ風の華やかな演出が可能です。
 
@@ -72,6 +72,3 @@ UIから「画像・サイズ・個数・配置パターン」を設定でき、
 
 吉田 琳花（Rinka Yoshida）  
 テクニカルアーティスト志望｜表現と技術の融合を目指して活動中  
-Email: your.email@example.com  
-GitHub: [https://github.com/yourusername](https://github.com/yourusername)
-
