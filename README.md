@@ -62,9 +62,11 @@ UIから「画像・サイズ・個数・配置パターン」を設定でき、
 
 ---
 
-## 📄 補足資料（PDF・コード）
+## 📂 プログラムコード
 
-- [GitHub上の全コード](https://github.com/yourusername/portfolio/tree/main/compact_stage)
+このプロジェクトで使用しているアドオンコードは、すべて以下のフォルダに格納されています：
+
+🔗 [compact stage フォルダを見る](./compact%20stage/)
 
 ---
 
