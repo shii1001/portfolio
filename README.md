@@ -94,7 +94,7 @@ https://www.youtube.com/watch?v=NFtFNOPC6a4
 🔗 [compact stage フォルダを見る](./compact%20stage/)
 
 ---
-##最後に
+## 最後に
 
 見ていただきありがとうございました。
 
