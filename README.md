@@ -94,7 +94,11 @@ https://www.youtube.com/watch?v=NFtFNOPC6a4
 🔗 [compact stage フォルダを見る](./compact%20stage/)
 
 ---
+##最後に
 
+見ていただきありがとうございました。
+
+----
 ## 👤 制作者情報
 
 吉田 琳花（Rinka Yoshida）
