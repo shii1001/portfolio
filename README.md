@@ -37,12 +37,13 @@ UIから「画像・サイズ・個数・配置パターン」を設定でき、
   </div>
   <img src="./img_partucle.png" width="200" />
 </div>
-
+<img src="./blue.png" width="400" />
+</div>
 ### Burst Shape Generator
 選択した図形（Sphere, Starなど）を中央から放射状に出現させる演出ツール。  
 形状、色、サイズを選べるため、シーンのテンポに合わせて動きを調整できます。
 
-<img src="./pink.png" width="400" />
+
 
 ### Hologram Glow FX
 ピンクやブルーなどの発光色を選び、ホログラム風のグローエフェクトを生成します。  
