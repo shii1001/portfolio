@@ -1,125 +1,218 @@
-# compact stage - Blenderカスタムツール紹介
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>compact stage – Blender Custom FX Add‑on</title>
+    <style>
+      /* ------------------------------
+        Minimal, responsive one‑page style
+      ------------------------------ */
+      :root {
+        --bg: #f8f9fb;
+        --primary: #4f46e5;
+        --accent: #ec4899;
+        --text: #1f2937;
+        --surface: #ffffff;
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Inter", "Noto Sans JP", sans-serif;
+      }
+      body {
+        background: var(--bg);
+        color: var(--text);
+        line-height: 1.7;
+      }
+      header {
+        background: linear-gradient(135deg, var(--primary), var(--accent));
+        color: #fff;
+        padding: 4rem 1rem 5rem;
+        clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+        text-align: center;
+      }
+      header h1 {
+        font-size: clamp(2rem, 5vw, 3rem);
+        font-weight: 800;
+        letter-spacing: -0.025em;
+      }
+      header p {
+        margin-top: 1rem;
+        font-size: 1.1rem;
+        opacity: 0.9;
+      }
+      main {
+        max-width: 900px;
+        margin: -3rem auto 4rem;
+        padding: 0 1rem;
+      }
+      section {
+        background: var(--surface);
+        border-radius: 1.25rem;
+        padding: 2.5rem 2rem;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.04);
+        margin-bottom: 2.5rem;
+      }
+      h2 {
+        font-size: 1.5rem;
+        margin-bottom: 1.25rem;
+        position: relative;
+      }
+      h2::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -0.4rem;
+        width: 3rem;
+        height: 3px;
+        background: var(--primary);
+        border-radius: 2px;
+      }
+      .feature {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1.5rem;
+        margin-bottom: 2rem;
+      }
+      .feature img {
+        width: 100%;
+        border-radius: 0.75rem;
+        object-fit: cover;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+      }
+      .feature h3 {
+        margin-top: 0;
+        font-size: 1.25rem;
+        color: var(--primary);
+      }
+      .feature p {
+        margin-top: 0.5rem;
+      }
+      @media (max-width: 700px) {
+        .feature {
+          grid-template-columns: 1fr;
+        }
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 1rem;
+      }
+      th, td {
+        padding: 0.75rem 0.5rem;
+        border-bottom: 1px solid #e5e7eb;
+        text-align: left;
+      }
+      th {
+        background: var(--bg);
+        font-weight: 600;
+      }
+      footer {
+        text-align: center;
+        font-size: 0.875rem;
+        padding: 2rem 1rem 3rem;
+        color: #6b7280;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>compact stage</h1>
+      <p>Blender 4.3 カスタムステージ演出アドオン</p>
+    </header>
 
-## 🔷 概要
-「compact stage」は、Blender 4.3.0上で動作する**インタラクティブなステージ演出ツール**です。  
-アイドルが活躍するアニメが子供のころから大好きで、演出で見られるような花びら・キラキラ粒子を、直感的なUI操作で制御できるアドオンとして開発しました。  
-**Blenderはこの制作のためにblenderのスクリプトを学び始め、約1か月でツール開発までやり遂げたものです。**
+    <main>
+      <!-- Overview -->
+      <section id="overview">
+        <h2>概要</h2>
+        <p>
+          <strong>compact stage</strong> は、Blender 上で花びらやキラキラ粒子を
+          直感的な UI から生成できるインタラクティブ演出ツールです。MV、VTuber
+          配信、デジタルライブなど、幅広いシーンで活躍します。
+        </p>
+        <img src="images/stage.png" alt="Stage preview" style="margin-top:1.5rem;width:100%;border-radius:0.75rem;box-shadow:0 4px 12px rgba(0,0,0,0.06)" />
+      </section>
 
-このツールは、MV・VTuber演出などにも応用可能です。
+      <!-- Features -->
+      <section id="features">
+        <h2>ツール機能</h2>
 
----
+        <div class="feature">
+          <div>
+            <h3>Ring&nbsp;FX&nbsp;Generator</h3>
+            <p>
+              画像を円環状に並べ、サイズ・個数・パターンを自在に変更できます。
+              アイドルステージのフラワーリング演出に最適です。
+            </p>
+          </div>
+          <img src="images/ring_FX.png" alt="Ring FX UI" />
+        </div>
 
-## 🪄 ツール機能紹介
+        <div class="feature">
+          <img src="images/pink.png" alt="Ring FX Example" />
+          <div>
+            <h3>Image&nbsp;Particle&nbsp;Tool</h3>
+            <p>
+              好きな PNG（花・ハート・星など）を複数読み込み、それぞれサイズや枚数を設定した上でランダムに飛散させられます。
+            </p>
+          </div>
+        </div>
 
-###  Ring FX Generator
-円状に画像エフェクトを並べて放出するツールです。  
-UIから「画像・サイズ・個数・配置パターン」を設定でき、アイドルステージ風の華やかな演出が可能です。
+        <div class="feature">
+          <div>
+            <h3>Burst&nbsp;Shape&nbsp;Generator</h3>
+            <p>
+              図形（Sphere, Star など）を中央から放射状に出現させるツール。テンポよく場面転換を盛り上げます。
+            </p>
+          </div>
+          <img src="images/blue.png" alt="Burst Shape Example" />
+        </div>
 
-###  Image Particle Tool
-好きなPNG画像（花・ハート・星など）を複数読み込み、個別にサイズや枚数を設定してランダムに飛散させるツール。  
-自然な放物線演出も含まれ、演出のアクセントに使えます。
+        <div class="feature">
+          <img src="images/blue.png" alt="Glow FX Example" />
+          <div>
+            <h3>Hologram&nbsp;Glow&nbsp;FX</h3>
+            <p>
+              ピンクやブルーの発光色を選択し、ホログラム風のグローエフェクトをワンクリックで生成します。
+            </p>
+          </div>
+        </div>
+      </section>
 
-###  Burst Shape Generator
-選択した図形（Sphere, Starなど）を中央から放射状に出現させる演出ツール。  
-形状、色、サイズを選べるため、シーンのテンポに合わせて動きを調整できます。
+      <!-- Tech -->
+      <section id="tech">
+        <h2>使用技術</h2>
+        <table>
+          <tr><th>ツール</th><th>バージョン / 用途</th></tr>
+          <tr><td>Blender</td><td>4.3.0</td></tr>
+          <tr><td>Python (bpy)</td><td>3.10</td></tr>
+          <tr><td>VS Code</td><td>開発環境</td></tr>
+          <tr><td>GitHub</td><td>ソース管理・公開</td></tr>
+        </table>
+      </section>
 
-###  Hologram Glow FX
-ピンクやブルーなどの発光色を選び、ホログラム風のグローエフェクトを生成します。  
-舞台装置やSF的な演出、近未来感を出すシーンに最適です。
+      <!-- Future -->
+      <section id="future">
+        <h2>今後の展望</h2>
+        <ul style="margin-left:1rem; list-style:square;">
+          <li>音声・表情センサーと組み合わせたリアルタイム演出</li>
+          <li>Unity / Unreal Engine との統合</li>
+          <li>Geometry&nbsp;Nodes と連携した高度な FX</li>
+        </ul>
+      </section>
 
+      <!-- Author -->
+      <section id="author" style="text-align:center;">
+        <h2>制作者</h2>
+        <p>吉田 琳花 (Rinka&nbsp;Yoshida)</p>
+        <p style="font-size:0.9rem;color:#6b7280;">© 2025 Rinka&nbsp;Yoshida – All rights reserved.</p>
+      </section>
+    </main>
 
----
-
-## 🎇 このアドオンを使って制作した作品：「compact stage」
-
-**1.Why I Created This Program**  
-アニメに登場するアイドルたちが踊るような、華やかで没入感のあるステージ演出を自分の手で実現したいと思ったからです。限られた空間でも演出の変化が楽しめるように、"コンパクト"かつ演出的に豊かなステージを目指しました。四季の変化や、観客の動きに反応するインタラクティブな演出を意識しています。
-
-**2.What I Focused On While Developing**  
-・誰でも直感的に使えるように、UIをシンプルでわかりやすくすること  
-・舞台全体の演出テーマがぶれないよう、色や形状、エフェクトのバランスを意識すること
-
-**3.What Was Challenging**  
-・Blenderのスクリプトで複数の画像や形状を読み込み、それぞれ個別の設定で飛ばす処理の実装  
-・UIパネルからユーザーが指定したパラメータに応じて動的に生成される仕組みの構築  
-・1人制作のため、アイデア出し・実装・検証・調整までを自分で回す必要があった点
-
-**4.Key Technical Highlights**  
-・形や色、画像を複数追加し、UIからそれぞれサイズ・枚数・放物線範囲を調整できるシステム設計  
-・花びらやエフェクトが自然に飛び散るよう、0.5倍の放物線を調整してリアル感を出した点  
-・ツールごとに明確な機能分割を行い、ユーザーが演出意図に合わせて使い分けられるよう設計：  
-　- Ring FX Generator：円形に画像を配置して演出  
-　- Image Particle Tool：複数の画像を指定し、サイズ・個数・動きを細かく制御  
-　- Burst Shape Generator：図形を放射状に展開する演出エフェクト  
-　- Hologram Glow FX：選択した色でホログラムのような光を追加
-
-**Reference Source** 
- 
-・構文チェックや設計整理にはChatGPT-4oを活用
-
----
-
-## ⚙ 使用技術・環境
-
-| ツール | バージョン・内容 |
-|--------|------------------|
-| Blender | 4.3.0 |
-| Python  | 3.10（bpy API使用） |
-| Visual Studio Code | 開発環境 |
-| GitHub | ソース管理・公開 |
-| ChatGPT-4o | 構造設計・構文確認補助 |
-
----
-
-## 💡 技術面で工夫した点
-
-### 1. 画像の円形・スパイラル配置と回転アニメーション
-**課題**：選んだ画像を使って、キャラクターの周囲に花びらなどのエフェクトを「円形」や「スパイラル状」に生成したい。
-回転軸やキーフレームの競合により、思ったように動かず苦労しました。特に `F-Curve already exists` というエラーには何度も悩まされました。
-
-### 2. スパイラル状の粒子配置
-**課題**：粒子をスパイラル（螺旋）状に配置して、見栄えをよくしたい。
-回転数や高さの調整をUIから行えるようにしつつ、自然な配置にするためには三次元ベクトルの扱いが難しく、計算に苦労しました。
-
-### 3. サイズや枚数の個別設定が可能なUIの構築
-**課題**：画像ごとにサイズや枚数を個別に設定できるようにしたい。
-UIで画像を追加するボタンを押しても反映されなかったり、表示がずれたりするなど、バグの対処に苦戦しました。
-
-### 4. 自然落下を使ったアニメーションの実装
-**課題**：花びらなどを落下させる際、キーフレームではなく自然な重力落下にしたい。
-Rigid Bodyを使うと、画像が不自然な向きで落ちたり、当たり判定が変わったりするなど、意外な不具合が発生しました。アニメーション管理と物理シミュレーションの両立が難しい点も課題でした。
-
-### 5. アドオンの保存と再利用
-**課題**：`.pyファイル`の保存や再読み込みの方法が最初はわかりづらく、他のプロジェクトでも再利用できるようにするまでに時間がかかりました。
-
-これらの経験を通じて、アニメーション制御、UI設計、物理演算、アドオン管理の知識を深めることができました。
-
----
-
-##  今後の展望
-
-- 音声や表情など「感情」に反応するリアルタイム演出制御
-- UnityやUnrealとの連携、他ソフトでも使える汎用性の高いツール化
-- Blenderのノードやジオメトリノードと連携した演出の強化
-
----
-
-## 📂 プログラムコード
-
-このプロジェクトで使用しているアドオンコードは、すべて以下のフォルダに格納されています：
-
-🔗 [compact stage フォルダを見る](./compact%20stage/)
-
-また、各 `.py` ファイルの使用方法やツールの使い方については、PDF資料内に詳しく記載しています。
-
----
-## 最後に
-
-ここまで丁寧にご覧いただき、誠にありがとうございました。  
-短い制作期間ではありましたが、自分の理想とする演出を形にするために全力を注ぎました。  
-もし本ツールや取り組みにご興味を持っていただけましたら、ぜひフィードバックをいただけますと幸いです。
-
-----
-## 👤 制作者情報
-
-吉田 琳花（Rinka Yoshida）
+    <footer>
+      Built with ❤️ &nbsp;and Blender.
+    </footer>
+  </body>
+</html>
