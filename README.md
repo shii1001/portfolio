@@ -8,7 +8,7 @@
 
 このツールは、MV・VTuber演出などにも応用可能です。
 
-![stage](./stage.png)
+<img src="./stage.png" width="400" />
 
 ---
 
@@ -18,26 +18,37 @@
 円状に画像エフェクトを並べて放出するツールです。  
 UIから「画像・サイズ・個数・配置パターン」を設定でき、アイドルステージ風の華やかな演出が可能です。
 
-![ring FX](./ring_FX.png)
-![pink](./pink.png)
+<div style="display:flex; align-items: flex-start; gap:1rem;">
+  <div style="flex: 1;">
+    <p>指定した画像を円形に並べることで、キラキラや花びらの演出が可能になります。複数枚の画像を組み合わせることで、より華やかな表現ができます。</p>
+  </div>
+  <img src="./ring_FX.png" width="200" />
+</div>
+
+<img src="./pink.png" width="400" />
 
 ### Image Particle Tool
 好きなPNG画像（花・ハート・星など）を複数読み込み、個別にサイズや枚数を設定してランダムに飛散させるツール。  
 自然な放物線演出も含まれ、演出のアクセントに使えます。
 
-![img particle](./img_partucle.png)
+<div style="display:flex; align-items: flex-start; gap:1rem;">
+  <div style="flex: 1;">
+    <p>画像ごとにサイズや出現数を調整可能で、リアルな放物線飛散演出ができます。複数パターンをランダム配置することで自然な粒子演出が行えます。</p>
+  </div>
+  <img src="./img_partucle.png" width="200" />
+</div>
 
 ### Burst Shape Generator
 選択した図形（Sphere, Starなど）を中央から放射状に出現させる演出ツール。  
 形状、色、サイズを選べるため、シーンのテンポに合わせて動きを調整できます。
 
-![burst](./pink.png)
+<img src="./pink.png" width="400" />
 
 ### Hologram Glow FX
 ピンクやブルーなどの発光色を選び、ホログラム風のグローエフェクトを生成します。  
 舞台装置やSF的な演出、近未来感を出すシーンに最適です。
 
-![hologram](./hologram.png)
+<img src="./hologram.png" width="400" />
 
 ---
 
@@ -64,8 +75,7 @@ UIから「画像・サイズ・個数・配置パターン」を設定でき、
 　- Burst Shape Generator：図形を放射状に展開する演出エフェクト  
 　- Hologram Glow FX：選択した色でホログラムのような光を追加
 
-**Reference Source**
- 
+**Reference Source**  
 ・構文チェックや設計整理にはChatGPT-4oを活用
 
 ---
