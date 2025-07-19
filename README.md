@@ -1,7 +1,7 @@
 # compact stage - Blenderカスタムツール紹介
 
 
-## その他　ポートフォリオはこちら
+### ❓　その他　ポートフォリオはこちら
 [GitHub リンク](https://github.com/shii1001/portfolio2/tree/main)
 
 ## 🔷 概要
